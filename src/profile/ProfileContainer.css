@@ -1,0 +1,16 @@
+.container {
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);  
+    /* background-color: rgb(81, 79, 76); */
+    margin: 2rem auto;
+    /* width:140rem; */
+    width: 100%;
+    max-width: 97%;
+    
+  }
+
+.container h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2f71c1;
+}

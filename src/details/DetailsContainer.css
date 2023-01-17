@@ -1,0 +1,9 @@
+.details-container {
+    padding: 1rem;
+    /* background-color: rgb(190, 63, 63);   */
+    /* background-color: rgb(81, 79, 76); */
+    margin: 2rem auto;
+    /* width:140rem; */
+    width: 100%;
+    max-width: 50%;
+  }
