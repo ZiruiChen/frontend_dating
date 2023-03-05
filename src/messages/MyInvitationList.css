@@ -1,0 +1,51 @@
+.myinv-list {
+  display: grid;
+  grid-template-columns: 24rem 150px;
+  /* grid-template-rows: 1fr 1fr 1fr ; */
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+  /* justifyContent="center" */
+  list-style: none;
+  padding: 0;
+  /* background-color: rgb(158, 56, 56); */
+  width: 100%;
+}
+
+.myinv-list button {
+  /* color:aquamarine; */
+  align-self: center;
+  justify-content: center;
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 0.5rem 1.0rem;
+  border-radius: 9px;
+  margin-right: 10px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+}
+
+/* @media(max-width:1000px){
+    .message-list{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media(max-width:500px){
+    .message-list{
+      grid-template-columns: 1fr;
+    }
+  } */
+
+.myinv-list__fallback {
+  color: white;
+  text-align: center;
+}

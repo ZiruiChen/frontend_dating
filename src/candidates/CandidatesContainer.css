@@ -1,9 +1,17 @@
 .can-container {
-    padding: 1rem;
-    /* background-color: rgb(190, 63, 63);   */
-    /* background-color: rgb(81, 79, 76); */
-    margin: 2rem auto;
-    /* width:140rem; */
-    width: 100%;
-    max-width: 80%;
+  padding: 1rem;
+  /* background-color: rgb(190, 63, 63);   */
+  /* background-color: rgb(175, 118, 34); */
+  margin: 2rem auto;
+  /* width:140rem; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 80%;
+}
+
+@media(min-width:1500px){
+  .can-container{
+    max-width: 1200px;
   }
+}

@@ -15,7 +15,7 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to="/candidates">
-        <div className={classes.logo}>Happy Dating</div>
+        <div className={classes.logo}>秀才娘</div>
       </Link>
       <nav>
         <ul>
@@ -27,6 +27,11 @@ const MainNavigation = () => {
           {isLoggedIn && (
             <li>
               <Link to="/candidates">主页</Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <li>
+              <Link to="/messages">消息</Link>
             </li>
           )}
           {isLoggedIn && (

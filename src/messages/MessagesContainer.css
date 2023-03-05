@@ -1,0 +1,50 @@
+.message-container {
+  padding: 1rem;
+  /* background-color: rgb(190, 63, 63);   */
+  /* background-color: rgb(175, 118, 34); */
+  margin: 2rem auto;
+  /* width:140rem; */
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  max-width: 80%;
+}
+
+.buttons {
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.buttons button{
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9px;
+  margin-right: 10px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+}
+
+button:hover,
+button:active{
+  background-color: #5c8fca;
+  color: #fff;  
+}
+
+@media (min-width: 1500px) {
+  .message-container {
+    max-width: 1200px;
+  }
+}

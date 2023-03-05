@@ -49,6 +49,26 @@
   /* border-radius: 12px; */
 }
 
+.button {
+  font: inherit;
+  border: 1px solid #5c8fca;
+  background: #5c8fca;
+  color: white;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:active {
+  background: #769fcf;
+  border-color: #769fcf;
+}
+
+.button:focus {
+  outline: none;
+}
+
+
 @media (min-width: 580px) {
   .details-instance__description {
     flex-direction: column;

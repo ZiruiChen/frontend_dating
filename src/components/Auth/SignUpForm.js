@@ -4,64 +4,86 @@ import AuthContext from "../../store/auth-context";
 
 import classes from "./AuthForm.module.css";
 
+const { REACT_APP_IP_ADDRESS, REACT_APP_PORT } = process.env;
 
-const {REACT_APP_IP_ADDRESS, REACT_APP_PORT} = process.env;
-
-const AuthForm = () => {
+const SignUpForm = () => {
   const history = useHistory();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
 
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const switchAuthModeHandler = () => {
     // setIsLogin((prevState) => !prevState);
   };
 
-  
-
-
-
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
     setIsLoading(true);
-    let url;
-    if (isLogin) {
-      url =
-      `https://${REACT_APP_IP_ADDRESS}:${REACT_APP_PORT}/user/login`
-      console.log(url)
-        // "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBhAS0OkXlVaxC4KPU_pJomTO7CqWmnZII";
-    } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBhAS0OkXlVaxC4KPU_pJomTO7CqWmnZII";
-    }
+    // let url;
+    // if (isLogin) {
+    //   url =
+    //   `http://${REACT_APP_IP_ADDRESS}:${REACT_APP_PORT}/user/login`
+    //     // "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBhAS0OkXlVaxC4KPU_pJomTO7CqWmnZII";
+    // } else {
+    //   url =
+    //     "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBhAS0OkXlVaxC4KPU_pJomTO7CqWmnZII";
+    // }
+    const url = `http://${REACT_APP_IP_ADDRESS}:${REACT_APP_PORT}/user/register`;
 
-
-    fetch(url, {   
+    fetch(url, {
       method: "POST",
       // body: JSON.stringify({
       //   email: enteredEmail,
       //   password: enteredPassword,
       //   returnSecureToken: true,
       // }),
+      // body: JSON.stringify({
+      //   telephone: enteredEmail,
+      //   password: enteredPassword,
+      //   returnSecureToken: true,
+      // }),
       body: JSON.stringify({
-        telephone: enteredEmail,
-        password: enteredPassword,
-        returnSecureToken: true,
+        password: "123",
+        name: "321",
+        idcard: "3131",
+        telephone: 1233,
+        wechat: "1323",
+        nickname: "123",
+        icon: "http://localhost:9090/file/download/a18c694cc8244059954fcab5383f6107.bmp",
+        nationality: 12,
+        birthdate: "1997-05-06",
+        gender: 1,
+        height: 123,
+        weight: 123,
+        married: 1,
+        intro: "123",
+        hobby: 13,
+        address: "123",
+        education: "P",
+        income: 12,
+        property: "123",
+        smoking: 1,
+        drinking: 1,
+        album: "",
+        register_date: null,
+        last_login_time: null,
+        membership: null,
+        pause: null,
       }),
       headers: {
         "Content-Type": "application/json",
-        "X-Requested-With": "XMLHttpRequest"
+        "X-Requested-With": "XMLHttpRequest",
       },
     })
       .then((res) => {
         setIsLoading(false);
-        console.log("response is below")
+        console.log("response is below");
         console.log(res);
         if (res.ok) {
           //...success response
@@ -79,25 +101,20 @@ const AuthForm = () => {
           });
         }
       })
-      .then(console.log("before replace"))
       .then((data) => {
-        console.log("this is the data section")
-        console.log(data.data);
+        // console.log(data.data);
         authCtx.login(data.data);
         history.replace("/candidates");
       })
       .catch((err) => {
-        console.log("catch error")
+        console.log("catch error");
         alert(err.message);
         setIsLoading(false);
       });
   };
 
-
-
   return (
     <section className={classes.auth}>
-
       <h1>{isLogin ? "登录" : "注册"}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
@@ -114,9 +131,7 @@ const AuthForm = () => {
           />
         </div>
         <div className={classes.actions}>
-          {!isLoading && (
-            <button>{isLogin ? "登录" : "创建账号"}</button>
-          )}
+          {!isLoading && <button>{isLogin ? "登录" : "创建账号"}</button>}
           {isLoading && <p>Sending request</p>}
           {/* <button
             type="button"
@@ -131,4 +146,4 @@ const AuthForm = () => {
   );
 };
 
-export default AuthForm;
+export default SignUpForm;

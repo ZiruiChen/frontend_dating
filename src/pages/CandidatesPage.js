@@ -9,7 +9,7 @@ const CandidatesPage = (props) => {
   };
   return (
     <Fragment>
-      <FilterContainer onFilter={onFilter} />
+      {/* <FilterContainer onFilter={onFilter} /> */}
       <CandidatesContainer candidates={props.src} age={age} />
     </Fragment>
   );

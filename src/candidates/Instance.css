@@ -20,7 +20,7 @@
   }
 
   .lady-instance__img {
-    width: 24rem;
+    width: 100%;
   }
   
   .lady-instance h2 {
@@ -41,20 +41,25 @@
     /* border-radius: 12px; */
   }
   
-  @media (min-width: 580px) {
+  /* @media (min-width: 580px) {
+     */
+  @media (min-width: 0px) {
     .lady-instance__description {
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
       flex: 1;
+      width: 100%;
     }
   
     .lady-instance__description h2 {
       font-size: 1.25rem;
+      width: 100%;
     }
   
     .lady-instance__age {
       font-size: 1rem;
       padding: 0.5rem 1rem;
+      width: 100%;
     }
   }

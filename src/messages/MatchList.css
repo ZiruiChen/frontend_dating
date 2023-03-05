@@ -1,4 +1,4 @@
-.candidate-list {
+.mat-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     /* grid-template-rows: 1fr 1fr 1fr ; */
@@ -12,18 +12,17 @@
   }
 
   @media(max-width:1000px){
-    .candidate-list{
+    .mat-list{
       grid-template-columns: 1fr 1fr;
     }
   }
   @media(max-width:500px){
-    .candidate-list{
+    .mat-list{
       grid-template-columns: 1fr;
     }
   }
   
-  .candidate-list__fallback {
+  .mat-list__fallback {
     color: white;
     text-align: center;
   }
-
